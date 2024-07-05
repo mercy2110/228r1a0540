@@ -1,0 +1,13 @@
+import sqlite3
+con=sqlite3.connect("mydatabase.db")
+cur=con.cursor()
+#cur.execute("create table if not exists  students(name varchar(50),email varchar(50),password varchar(50))")
+#cur.execute('insert into students values("mercy","123","abc")')
+#cur.execute('insert into students values("sita","mercy@123","cdf")')
+#cur.execute('insert into students values("gita","mercy@","ghi")')
+cur.execute('update students set name="mercy" where email="123" ')
+x=cur.execute('select * from students')
+print(x.fetchall())
+#c=cur.execute()
+con.commit()
+print(x)
